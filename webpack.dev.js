@@ -7,6 +7,9 @@ module.exports = {
     entry: './src/client/index.js',
     mode: 'development',
     devtool: 'source-map',
+    devServer: {
+        port: 3010
+    },
     stats: 'verbose',
     output: {
         libraryTarget: 'var',
