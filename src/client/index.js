@@ -1,5 +1,8 @@
-import { checkForName } from './js/nameChecker'
+import { validateInput } from './js/inputValidator'
 import { handleSubmit } from './js/formHandler'
+import { updateUI } from "./js/uiUpdate";
+import { postDataToServer } from "./js/postToServer";
+
 
 import './styles/base.scss'
 import './styles/footer.scss'
@@ -7,6 +10,8 @@ import './styles/form.scss'
 import './styles/header.scss'
 
 export {
-    checkForName,
+    postDataToServer,
+    updateUI,
+    validateInput,
     handleSubmit,
 }

@@ -8,11 +8,12 @@
     <body>
 
         <header>
-            <div class="">
-                Logo
+            <div class="logo">
+                <img src="http://localhost:3010/src/client/assets/1_8XIjunF2z6dmsVlkEuOUaw.png" alt="sentiment photo">
             </div>
-            <div class="">
-                navigation
+            <div class="nav_section">
+                <button class="nav_button">Navigate</button>
+                <button class="nav_button">Navigate</button>
             </div>
         </header>
 
@@ -34,6 +35,12 @@
         <footer>
             <p>This is a footer</p>
         </footer>
-
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>

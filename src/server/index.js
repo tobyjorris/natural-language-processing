@@ -28,7 +28,6 @@ app.get('/test', function (req, res) {
 })
 
 app.post('/analyze', async function (req, res) {
-    console.log(req);
     const apiResponse = await analyzeSentiment(req.body);
     try {
         res.send(apiResponse)
