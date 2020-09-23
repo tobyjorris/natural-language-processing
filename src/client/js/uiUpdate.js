@@ -1,9 +1,4 @@
-function updateUI (apiResponse)  {
-    const sentenceList = [];
-    for (const sentenceSegment of apiResponse.sentence_list) {
-        sentenceList.push(sentenceSegment.text);
-    }
-
+function updateUI (apiResponse, URL)  {
     const resultsDiv = document.getElementById('results')
 
     const documentFragment = document.createDocumentFragment();
@@ -17,7 +12,7 @@ function updateUI (apiResponse)  {
     const horizontalRule = document.createElement('hr')
 
     resultsGroup.classList.add('results_group')
-    sentence.textContent = `Text: "${sentenceList.join(' ')}"`;
+    sentence.textContent = `Article URL: "${URL}"`;
     agreement.textContent = `Agreement: ${apiResponse.agreement}`;
     confidence.textContent = `Confidence: ${apiResponse.confidence}`;
     irony.textContent = `Irony: ${apiResponse.irony}`;

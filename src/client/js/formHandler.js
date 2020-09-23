@@ -4,20 +4,25 @@ import { postDataToServer } from "../index";
 
 function handleSubmit(event) {
     event.preventDefault()
-    let formText = document.getElementById('analysis-text').value;
+    const url = document.getElementById('analysis-text').value;
 
-    if (validateInput(formText)) {
+    if (validateInput(url)) {
         const serverData = {
-            text: formText
+            submittedURL: url
         }
-        postDataToServer('http://localhost:8081/analyze', serverData)
-            .then(data => {
-                console.log('API data sent back from server:', data)
-                updateUI(data)
-            });
+        postMiddleFunction(serverData)
     } else {
         alert('invalid input!')
     }
 }
 
+function postMiddleFunction (serverData) {
+    postDataToServer('http://localhost:8081/analyze', serverData)
+        .then(data => {
+            console.log('API data sent back from server:', data)
+            updateUI(data, serverData.submittedURL)
+        });
+}
+
+export { postMiddleFunction }
 export { handleSubmit }

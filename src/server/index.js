@@ -37,7 +37,10 @@ app.post('/analyze', async function (req, res) {
 })
 
 const analyzeSentiment = async function(data) {
-    const request = await fetch(`https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&of=json&txt=${data.text}&lang=en`)
+    const url = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&of=json&url=${data.submittedURL}&lang=en`
+    const encodedURL = encodeURI(url);
+
+    const request = await fetch(encodedURL)
     try {
         return request.json();
     } catch (error) {
