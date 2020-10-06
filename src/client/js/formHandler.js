@@ -10,19 +10,11 @@ function handleSubmit(event) {
         const serverData = {
             submittedURL: url
         }
-        postMiddleFunction(serverData)
+        postDataToServer('http://localhost:8081/analyze', serverData)
+            .then(data => updateUI(data, serverData.submittedURL));
     } else {
         alert('invalid input!')
     }
 }
 
-function postMiddleFunction (serverData) {
-    postDataToServer('http://localhost:8081/analyze', serverData)
-        .then(data => {
-            console.log('API data sent back from server:', data)
-            updateUI(data, serverData.submittedURL)
-        });
-}
-
-export { postMiddleFunction }
 export { handleSubmit }

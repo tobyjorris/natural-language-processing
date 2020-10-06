@@ -6,20 +6,10 @@
         <meta name="keywords" content="HTML, CSS, JavaScript">
         <meta name="author" content="Toby Jorris">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Test</title>
+        <title>Sentiment Analysis</title>
     </head>
 
     <body>
-        <header>
-            <div class="logo">
-                <img src="http://localhost:3010/src/client/assets/1_8XIjunF2z6dmsVlkEuOUaw.png" alt="sentiment photo">
-            </div>
-            <div class="nav_section">
-                <button class="nav_button">Navigate</button>
-                <button class="nav_button">Navigate</button>
-            </div>
-        </header>
-
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
@@ -41,7 +31,7 @@
         <script>
             if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js');
+                    navigator.serviceWorker.register('./service-worker.js');
                 });
             }
         </script>
