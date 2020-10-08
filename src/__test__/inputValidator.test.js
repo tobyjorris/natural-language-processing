@@ -1,5 +1,5 @@
-import { postDataToServer } from "../client/js/postToServer";
+import { validateInput } from "../client";
 
 test("checks input for a valid URL", () => {
-  expect(postDataToServer("https://www.google.com")).toBe({});
+  expect(validateInput("https://www.google.com")).toBe(true);
 });
