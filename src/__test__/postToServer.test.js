@@ -1,5 +1,5 @@
 const regeneratorRuntime = require("regenerator-runtime");
-import { postDataToServer } from "../client/js/postToServer";
+import { postDataToServer } from "../client/js/formHandler";
 
 describe("postDataToServer", () => {
   it("works with postDataToServer", async () => {
